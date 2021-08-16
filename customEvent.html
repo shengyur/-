@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="input">
+  <script>
+    
+    var myEvent1 = new CustomEvent('input', {
+      detail: {
+        abc: 1124
+      }
+    })
+    document.getElementById('input').dispatchEvent(myEvent1)
+  
+    document.body.addEventListener('show', (event) => { console.log(event, event.detail); });
+    // 触发
+    let myEvent = new CustomEvent('show', {
+        detail: {
+            username: 'zhangxinxu.com',
+            userid: '20200820'
+        }
+    });
+
+    document.getElementById('input').addEventListener('input', function() {
+      console.log(111)
+      document.body.dispatchEvent(myEvent);
+    })
+    
+  </script>
+</body>
+</html>

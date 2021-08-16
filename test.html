@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">我是：{{ name }}</div>
+
+  <!-- <script type="module" src="module.js"></script> -->
+  <!-- <script type="module">
+    // or an inline script
+    import {helperMethod} from './providesHelperMethod.js';
+    helperMethod();
+    
+  </script> -->
+
+<script type="importmap">
+  {
+     "imports": {
+        "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js"
+     }
+  }
+</script>
+<script type="module">
+  import Vue from 'vue'
+
+  new Vue({
+    el: '#container',
+    data: {
+      name: 'Jack'
+    }
+  })
+</script>
+ 
+</body>
+</html>
